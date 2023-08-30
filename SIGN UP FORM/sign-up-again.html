@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Form</title>
+</head>
+<body>
+    <form id="signup-form" action="message.html">
+
+        <label for="first-name">First Name*:</label>
+        <input type="text" id="first-name" name="first-name" required><br>
+
+        <label for="middle-name">Middle Name:</label>
+        <input type="text" id="middle-name" name="middle-name"><br>
+
+        <label for="last-name">Last Name*:</label>
+        <input type="text" id="last-name" name="last-name" required><br>
+
+        <label for="email">Email*:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password*:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="confirm-password">Confirm Password*:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required><br>
+
+        <label for="dob">DOB*:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="github">GitHub Profile Link:</label>
+        <input type="url" id="github" name="github"><br>
+
+        <label for="linkedin">LinkedIn Profile Link*:</label>
+        <input type="url" id="linkedin" name="linkedin" required><br>
+
+        <input type="submit" value="SUBMIT">
+    </form>
+
+    <div id="error-message" style="color: red;"></div>
+
+    <script>
+           document.getElementById('signup-form').addEventListener('submit', function(event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                showError('Passwords do not match.');
+            }
+        });
+
+        function showError(message) {
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = message;
+        }
+    </script>
+</body>
+</html>

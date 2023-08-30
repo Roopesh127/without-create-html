@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN-UP FORM</title>
+    <style>
+        .form-error {
+            color: red;
+        }
+
+        .body
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>SIGN-UP FORM </h1>
+
+        <form action="/myaction.php" name="myform" onsubmit="return validateform()" method="post">
+
+            <div class="form-design" id="fname">
+                <label for="">FIRST NAME</label><br>
+                <input type="text" name="fname"><br>
+                <span class="form-error"></span>
+            </div>
+
+            <div class="form-design" id="middlename">
+                <label for="">MIDDLE NAME</label><br>
+                <input type="text" name="mname"><br>
+                <span class="form-error"></span>
+            </div>
+
+            <div class="form-design" id="lastname">
+                <label for="">LAST NAME</label><br>
+                <input type="text" name="lname"><br>
+                <span class="form-error"></span>
+
+            </div>
+
+            <div class="form-design" id="password">
+                <label for="">PASSWORD</label><br>
+                <input type="password" name=""><br>
+                <span class="form-error"></span>
+
+            </div>
+
+            <div class="form-design" id="confirmpassword">
+                <label for="">CONFIRM PASSWORD</label><br>
+                <input type="password" name="pass"><br>
+                <span class="form-error"></span>
+
+            </div>
+
+            <div class="form-design" id="email">
+                <label for="">EMAIL</label><br>
+                <input type="email" name="confpass"><br>
+                <span class="form-error"></span><br></BR>
+
+            </div>
+
+            <div>
+                <input type="submit" value="submit">
+            </div>
+           
+
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+
+function seterror(id,error){
+  element = document.getElementById(id);
+  element.getElementsByClassName('form-error')[0].innerHTML = error;
+}
+
+function validateform(){
+var returnval = true;
+var name = document.forms['myform']["fname"].value;
+if(name.length<2){
+    seterror("name","*length of name is too short");
+    returnval = false;
+}
+}
+
+</script>

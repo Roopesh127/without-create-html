@@ -1,0 +1,49 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const stdclass = {
+        studentname:  "Roopesh",
+        stream: "EE",
+        year: "4th",
+        roomnumber: "G10",
+    };
+    const {studentname = "Ankit",stream = "MECH" } =stdclass;
+    console.log(studentname, stream,stdclass.roomnumber)
+</script>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    name: "Manas",
+    city: "Pune",
+    state: "MH",
+  };
+
+  const { name = "Ajit", city = "Delhi", country = "India" } = profile;
+
+  console.log({ name, city, country });
+</script> -->

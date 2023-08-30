@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <input type="text" name="todo" id="todoTitle"/>
+    <button id="addTodo">ADD TODO</button>
+   </div>
+   <ul id="todos"></ul>
+   <div id="snackbar"></div>
+</body>
+</html>
+
+<script>
+
+const todosElem = document.getElementById("todos");
+const todoTitleElem = document.getElementById("todoTitle");
+const btnAddTodo = document.getElementById("addTodo");
+
+btnAddTodo.addEventListener("click",()=>{
+    const todoTitleTxt = todoTitleElem.value;
+    const liElem = document.createElement("li");
+    liElem.innerText = todoTitleTxt;
+    todosElem.appendChild(liElem);
+    todoTitleElem.value = "";
+});
+ 
+
+</script>
