@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const launchSwiggyApp = () => {
+    return new Promise((reply, reject) => {
+      reply("App launched");
+    });
+  };
+
+  const selectingDeliveryLocation = (location) => {
+    return new Promise((reply, reject) => {
+      reply(location);
+    });
+  };
+
+  const orderingFromRajhans = (order) => {
+    return new Promise((reply, reject) => {
+      reply(order);
+    });
+  };
+
+  launchSwiggyApp()
+    .then((data) => {
+      console.log("App Launch Response: ", data);
+      return selectingDeliveryLocation("Karol Bagh, Indore");
+    })
+    .then((data) => {
+      console.log("Location : ", data);
+      return orderingFromRajhans([
+        { id: 1, name: "Dal Bafle pack of 3", quantity: 3, price: 1200 },
+        { id: 2, name: "Lassi", price: 100, quantity: 2 },
+      ]);
+    })
+    .then((data) => {
+      console.log("Order Confirmed: ", data);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
+    });
+
+
+
+    
+
+  const orderViaSwiggy = async () => {
+    try {
+      const openingApp = await launchSwiggyApp();
+      console.log("App response: ", openingApp);
+
+      const selectingLocation = await selectingDeliveryLocation(
+        "Karol Bagh, Indore"
+      );
+      console.log("Selected Location: ", selectingLocation);
+
+      const orderingFood = await orderingFromRajhans([
+        { id: 1, name: "Dal Bafle pack of 3", quantity: 3, price: 1200 },
+        { id: 2, name: "Lassi", price: 100, quantity: 2 },
+      ]);
+      console.log("Confirmed Order: ", orderingFood);
+    } catch (err) {
+      console.log("Err: ", err);
+    }
+  };
+</script>

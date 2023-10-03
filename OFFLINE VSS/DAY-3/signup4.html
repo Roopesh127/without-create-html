@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN-UP Page</title>
+</head>
+
+<style>
+    #usernameError{
+        display: none;
+        color: tomato;
+    }
+    #mobilenumberError{
+        display: none;
+        color: tomato;
+    }
+    #passError{
+         display: none;
+        color: tomato;
+    }
+    #mailError{
+        display: none;
+        color: tomato;
+    }
+</style>
+<body>
+    
+    <div>
+       <form action="">
+
+          <label for="">USERNAME:</label><br>
+          <input type="text" id="username"><br>
+          <span id="usernameError">Enter value should be chracters only</span><br>
+
+          <label for="">MOBILE NUMBER</label><br>
+          <input type="text" id="mobilenumber"><br>
+          <span id="mobilenumberError">Enter value should be chracters only</span><br>
+
+          <label for="">PASWORD</label><br>
+          <input type="password" id="password"><br>
+          <span id="passError">Enter value should be 2 to 20 characters</span><br>
+
+          <label for="">CONFIRM PASSWORD</label><br>
+          <input type="password" id="Confirmpassword"><br><br>
+
+          <label for="">EMAIL</label><br>
+          <input type="email" id="email"><br>
+          <span id="mailError">@ should be used</span><br>
+
+
+          <input type="submit" name="SUBMIT">
+
+        </form>
+    </div>
+    <script> 
+         const user= document.getElementById("username");
+         user.addEventListener("blur", function(e){
+            const{value,style} = e.target;
+
+            const regularuser = new RegExp(/^[A-Za-z]+$/);
+            if(!regularuser.test(value)){
+                style.border = "3px solid red";
+                const usernameError = document.getElementById("usernameError")
+                usernameError.style.display = "block"; 
+            }
+         });
+
+         const mobile = document.getElementById("mobilenumber");
+         mobile.addEventListener("blur",function(e){
+            const{value,style} = e.target;
+
+            const regularmobile = new RegExp(/^[1-9]+$/);
+            if(!regularmobile.test(value)){
+                style.border = "3px solid red";
+                const mobilenumberError = document.getElementById("mobilenumberError");
+               mobilenumberError.style.display = "block";
+
+            }
+         });
+
+         const passs= document.getElementById("password");
+         passs.addEventListener("blur", function(e){
+            const{value,style} = e.target;
+
+            const regularpass = new RegExp(/^[A-Za-z1-9]+$/);
+            if(!regularpass.test(value)){
+                style.border = "3px solid red";
+                const passError = document.getElementById("passError")
+                passError.style.display = "block"; 
+            }
+         });
+
+         const maill= document.getElementById("email");
+         maill.addEventListener("blur", function(e){
+            const{value,style} = e.target;
+
+            const regularmail = new RegExp(/^[A-Za-z1-9@.]+$/);
+            if(!regularmail.test(value)){
+                style.border = "3px solid red";
+                const mailError = document.getElementById("mailError")
+                mailError.style.display = "block"; 
+            }
+         });
+
+
+
+
+          const pass = document.getElementById("password") 
+          const confPass = document.getElementById("Confirmpassword")
+          const mail = document.getElementById("email") 
+ 
+            
+
+     </script>
+</body>
+</html>

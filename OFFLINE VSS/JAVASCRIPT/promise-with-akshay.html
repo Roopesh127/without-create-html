@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const githubapi = "https://api.github/users/roopesh127/";
+        // const user = fetch(githubapi);
+        // console.log(user)
+        // user.then(function(data){
+        //     console.log(data);
+        // });
+
+        //    const cart = ["shoes","belt", "kurt"];
+        //    createorder(cart, function(orderid){
+        //     proceedpayment(orderid,function(paymentinfo){
+        //         showordersummary(paymentinfo,function(){
+        //            updatewalletbalance();
+        //      });
+        //     });
+        //    });
+        //        createorder(cart)
+        //        .then((orderid)=>proceedpayment(orderid))
+        //        .then((paymentinfo)=>showordersummary(paymentinfo))
+        //        .then((paymentinfo)=>updatewalletbalance(paymentinfo));
+
+        // how to handle async await before promises
+
+        //  const p = new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve("Promise is resolved value");
+        //     },2000)
+        //  });
+
+        // async function handlepromise(){
+        //     const val = await p;
+        // }
+        // handlepromise();
+
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("promise resolved value!!")
+            }, 3000)
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("hello roopesh")
+            }, 5000)
+        });
+
+        async function handlepromise() {
+            console.log("hello world");
+
+            const val = await p1;
+            // console.log("namaste javascript");
+            console.log(val);
+
+            const val2 = await p2;
+            // console.log("namaste javascript season 2");
+            console.log(val2);
+        }
+        handlepromise();
+    </script>
+</body>
+
+</html>

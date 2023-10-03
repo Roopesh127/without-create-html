@@ -1,0 +1,66 @@
+.mainbody{
+    background-color:#2a3e77;
+    height: 0%;
+    width: o%;
+}
+.header{
+    background-color: rgb(7, 87, 104);
+    display: flex;
+    justify-content:space-around;
+
+}
+.one{
+    background-color: cornsilk;
+    display: flex;
+    justify-content:space-between;
+    gap: 30px;
+}
+.oneofone{
+
+}
+.oneoftwo{
+    background-color: darkslategrey;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.two{
+    background-color: lightslategrey;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.twoofone{
+
+}
+.twooftwo{
+    background-color: cadetblue;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.middlepart{
+    background-color: mediumseagreen;
+    display: flex;
+    justify-content: space-between;
+}
+.threeofone{
+    background-color: cornflowerblue;
+}
+.threeoftwo{
+    background-color: chartreuse;
+}
+.threeofthree{
+    background-color: cornflowerblue;
+}
+.footer{
+    background-color: rgb(75, 197, 75);
+    display: flex;
+    justify-content: center;
+}
+.fourofone{
+    background-color: darkcyan;
+    display: flex;
+    flex-wrap: wrap;
+}

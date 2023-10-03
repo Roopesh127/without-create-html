@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="signin">signup-with-google</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="maintitle"> SIGNUP WITH GOOGLE </h1>
+        <input type="text" id="email" name="email" placeholder="E-mail" /><br> <br>
+        <input type="password" id="password" name="password" placeholder="Password"><br><br>
+
+        <input type="submit" id="saveData" name="signup-submit" value="Login">
+
+        <button id="login">Signup with Google</button>
+        <button id="logout">Signout</button>
+    </div>
+    <div id="mainbox"></div><br>
+
+    <form id="myform" autocomplete="off">
+        <input type="text" id="search" placeholder="Enter your Github url ">
+        <button>search </button>
+    </form>
+    <div id="result"></div>
+
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBtxxqRF4UxlPeSA1OqO3dkVjOiNLVc0Go",
+        authDomain: "signup-with-de8f4.firebaseapp.com",
+        projectId: "signup-with-de8f4",
+        storageBucket: "signup-with-de8f4.appspot.com",
+        messagingSenderId: "355205418568",
+        appId: "1:355205418568:web:2cd718c04d0e3b58ef527d"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider(app);
+    let mybox = document.getElementById("mainbox");
+
+    login.addEventListener('click', (e) => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                // console.log("inside auth")
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+
+                const user = result.user;
+                console.log(user);
+
+                let usermail = document.createElement("p")
+                let userimage = document.createElement("img");
+                let username = document.createElement("p")
+
+                usermail.innerText = user.email;
+                mybox.appendChild(usermail);
+
+                userimage.src = user.photoURL;
+                mybox.appendChild(userimage)
+
+                username.innerText = user.displayName;
+                mybox.appendChild(username)
+
+                saveData.style.display = "none";
+                email.style.display = "none";
+                password.style.display = "none";
+                signin.style.display = "none";
+                maintitle.style.display = "none";
+
+
+
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                console.log(error)
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ...
+            });
+    })
+
+    logout.addEventListener('click', (e) => {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            mybox.style.display = "none";
+
+            logout.style.display = "none";
+            console.log("Sign-out successful.")
+        }).catch((error) => {
+            // An error happened.
+        });
+    })
+
+    var form = document.getElementById("myform")
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+
+        const search = document.getElementById("search").value
+        alert(search)
+
+        // fetch(" https://api.github.com/users/" + search)
+        //     .then((result) => result.json())
+        //     .then((data) => {
+        //         console.log(data)
+        //         document.getElementById("result").innerHTML = `<div src="${data.repos_url}"></div>`
+        //     })
+        const show = document.getElementById("result")
+        fetch(` https://api.github.com/users/${search}/repos`)
+            .then((result) => result.json())
+            .then((data) => {
+                console.log(data)
+
+                for (let i = 0; i < data.length; i++) {
+                    const box = document.createElement("p")
+                    box.innerText = data[i].name
+                    show.appendChild(box)
+                }
+            })
+    })
+
+</script>
+
+</html>

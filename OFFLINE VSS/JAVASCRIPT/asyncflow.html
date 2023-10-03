@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  console.log("Start");
+  let a = 10;
+  const b = "Arun";
+
+  setTimeout(() => {
+    console.log("1. SetTimeOut");
+  }, 0);
+
+  console.log("B : ", b);
+  console.log("a : ", a);
+
+  for (let i = 0; i < 10; i++) {
+    console.log("i: ", i);
+  }
+
+  setTimeout(() => {
+    console.log("2. SetTimeOut");
+  }, 0);
+
+  const p = new Promise((reply, reject) => {
+    reply(true);
+  });
+
+  const p2 = (name) => new Promise((reply, reject) => reply(name));
+
+  p.then((data) => console.log("P: ", data));
+
+  p2("Jagjeet").then((data) => console.log("Data"));
+
+  console.log("End");
+</script>

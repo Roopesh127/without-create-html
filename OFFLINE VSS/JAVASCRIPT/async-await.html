@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // const p1 = new Promise((resolve, reject) => {
+        //     console.log("hello javascript");
+        // })
+        // async function handlechange() {
+        //     console.log("hello roopesh")
+        //     const val = await p1;
+        //     console.log(val)
+        // }
+
+        // const promise1 = new Promise((resolve, reject) => {
+        //     console.log("hello roopesh")
+        //     resolve("promise chal ri")
+
+        // })
+        // async function chalri() {
+
+        //    var p1  =    await promise1;
+        //     console.log(p1)
+
+        // }
+        // chalri()
+
+
+
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("promise is resolved")
+                console.log("mai sync hoon baba")
+
+            }, 13000)
+        })
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("mai to chalta hi rahunga")
+            }, 6000)
+        })
+        async function promiserun() {
+
+            console.log("mai sync hoon bhai")
+
+            const run = await p1;
+            console.log("maine 5 second wait kar liya akhir ")
+            console.log(run)
+
+
+            const goo = await p2;
+            console.log("or mai 2 second ruk gaya kya itna kafi nahi?")
+            console.log(goo)
+        }
+        promiserun()
+
+    </script>
+</body>
+
+</html>

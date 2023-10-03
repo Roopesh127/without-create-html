@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const Ankit = () => {
+        //     return new Promise((reply, reject) => {
+        //         reply();
+        //     });
+
+
+        const seeDream = () => {
+            return new Promise((reply, reject) => {
+                reply();
+            });
+        };
+        seeDream()
+            .then(() => {
+                console.log("then:- ankit see the dream")
+            })
+
+        const waitFor3mit = () => {
+            return new Promise((reply, reject) => {
+                setTimeout(() => {
+                    console.log("then : - ankit thinking 3 second")
+
+                    const discussedFriend = () => {
+                        return new Promise((resolve, reject) => {
+                            resolve()
+                        })
+                    }
+                    discussedFriend()
+                        .then(() => {
+                            console.log("then:- ankit discussed his idea with his friend")
+                        })
+
+                    const laufingFriend = () => {
+                        return new Promise((resolve, reject) => {
+                            reject()
+                        })
+                    }
+                    laufingFriend()
+                        .catch(() => {
+                            console.log("catch :- friends make fun and and laufing")
+                            console.log("Ankit gots discouraged ")
+                        })
+
+                    const ankitdiscourage = () => {
+                        return new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                console.log("after 10 second")
+                                const discussedanotherFriend = () => {
+                                    return new Promise((resolve, reject) => {
+                                        resolve()
+
+                                    })
+                                }
+                                discussedanotherFriend()
+                                    .then(() => {
+                                        console.log("then:- ankit discussed to another friend")
+                                    })
+                                const disappointed = () => {
+                                    return new Promise((resolve, reject) => {
+                                        resolve()
+
+                                    })
+                                }
+                                disappointed()
+                                    .then(() => {
+                                        console.log("catch:- ankit is disappointed with his friend")
+                                    })
+
+                                const appliedtojob = () => {
+                                    return new Promise((resolve, reject) => {
+                                        resolve()
+
+                                    })
+                                }
+                                appliedtojob()
+                                    .then(() => {
+                                        console.log("then:- ankit is applied to job and selected")
+                                    })
+
+                                const informtofriend = () => {
+                                    return new Promise((resolve, reject) => {
+                                        resolve()
+
+                                    })
+                                }
+                                informtofriend()
+                                    .then(() => {
+                                        console.log("then:- ankit is inform to his friend and they are request to join")
+                                    })
+
+
+
+                            }, 5000)
+                        })
+                    }
+                    ankitdiscourage()
+
+                }, 3000)
+            })
+
+        }
+        waitFor3mit()
+
+
+
+
+
+
+
+        // };
+        // Ankit()
+
+    </script>
+</body>
+
+</html>
