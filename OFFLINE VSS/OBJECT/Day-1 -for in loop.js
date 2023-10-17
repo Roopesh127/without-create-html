@@ -8,6 +8,6 @@ const classAttendence = {
     7: "sachin",
     8: "shubham"
 }
-for (const candidate in classAttendence) {
-    console.log(classAttendence[candidate])
-}
+// for (const candidate in classAttendence) {
+//     console.log(classAttendence[candidate])
+// }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var name = 'satyam';
+    const obj = {
+        name: "Roopesh",
+        city: "Jabalpur",
+        live: "Indore",
+        moreInfo: function () {
+            console.log("1.", this) //ye dega object ko
+
+            function anotherInfo() {
+                console.log("2.", this.name) //ye dega global ko
+            }
+            anotherInfo()
+
+            const AndarWalaArrow = () => {
+                console.log("andarwalaarrow", this) // ye phir apne object ko dega
+            }
+            AndarWalaArrow()
+        },
+
+        ArrowKiInfo: () => {
+            console.log("3.", this.name) // ye window ko triger karega
+        },
+
+    }
+    obj.moreInfo()
+    obj.ArrowKiInfo()
+
+</script>

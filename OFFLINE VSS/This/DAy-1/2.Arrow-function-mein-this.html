@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var gharkibahu = "firstShadi";
+
+    function family() {
+        console.log("1. first shadi", this.gharkibahu)
+        // console.log("ghar ki nazar me :-", this)
+
+        function Personalfamily() {
+            var gharkibahu = "secondShadi";
+            console.log("2. Dusri Shadi", this.gharkibahu)
+
+
+        }
+        Personalfamily();
+
+        const againShadi = () => {
+            // var gharkibahu = "ThirdShadi"
+            console.log("3.Third Shadi", this.gharkibahu)
+        }
+        againShadi();
+    }
+    family.call({ gharkibahu: "ThirdShadi" });
+</script>
+
+<!-- var gharKiBahu = "Rani Baby";
+
+  function roopeshKaPariwar() {
+    console.log("This: ", this);
+    console.log("Roopesh ke pariwar nazar me: This.bahu : ", this.gharKiBahu);
+
+    function khudRoopesh() {
+      console.log("Roopesh ki nazar me: This.bahu : ", this.gharKiBahu);
+    }
+
+    const roopeshKeBhaiya = () => {
+      console.log("roopeshKeBhaiya ki nazar me: This.bahu : ", this.gharKiBahu);
+    };
+
+    khudRoopesh();
+    roopeshKeBhaiya();
+  }
+
+  roopeshKaPariwar.call({ gharKiBahu: "Roopa Baby" });
+  //roopeshKaPariwar(); -->

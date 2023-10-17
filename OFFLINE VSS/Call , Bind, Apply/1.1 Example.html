@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // var name = "Roopesh";
+    // function greeting(message, name) {
+    //     const x = message + " " + name;
+    //     return x
+    // }
+    // console.log(greeting.call("hello", name))
+
+
+    // var name = "Roopesh";
+    // function greeting(s) {
+    //     const x = s + " " + this.name;
+    //     return x;
+    // }
+    // function custom(s) {
+    //     return greeting.bind({ name: name }, s);
+    // }
+    // console.log(custom("hello"))
+
+    var name = "Roopesh";
+
+    function greeting(s) {
+        const x = s + " " + this.name;
+        return x;
+    }
+
+    function custom(s) {
+        return greeting.bind({ name: name })(s);
+    }
+
+    console.log(custom("hello"));
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    a = 10;
+    // console.log(this.a)
+
+    var x = 5;
+    let y = 6;
+    const z = 7;
+    // console.log(this.x)
+
+    function tryme() {
+        let x1 = 5;
+        y1 = 6;
+        var z1 = 7;
+        // console.log(this.x)//5
+        console.log(this.a)
+    }
+    tryme()
+
+</script>
